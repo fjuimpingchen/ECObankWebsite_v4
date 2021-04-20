@@ -90,10 +90,7 @@
                     <!-- <form style="font-size: 13pt;"> -->
                     <blockquote class="blockquote2">
                         <p style="font-weight: bold; margin-top: 0em">停利停損通知點</p>
-                        停利停損：±<input type="text" id="targetPercent" class="inputbox"
-                            onkeyup="this.value=this.value.replace(/[^\d]/g,'')" placeholder="10" required
-                            style="width: 3em; margin-left: 9em; margin-top: -2.5em;">
-                        <p style="margin-left: 9em; margin-top: -1.5em;">%</p>
+                        停利停損：± 10 ％
                     </blockquote>
                     <!-- </form> -->
                 </div>
@@ -223,10 +220,8 @@
 
         function setInputItem(e) {
             var str4 = document.querySelector("#targetiMoney").value;
-            var str5 = document.querySelector("#targetPercent").value;
 
             localStorage.setItem("iMoney", str4);
-            localStorage.setItem("Percent", str5);
         }
 
     </script>
