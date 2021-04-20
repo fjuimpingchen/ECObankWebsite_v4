@@ -45,20 +45,20 @@
                 <div class="item_3">
                     <blockquote class="blockquote1">
                         <p style="font-weight: bold; margin-top: 0em;">名稱</p>
-                        <input type="text" id="targetName" class="inputbox2" required>
+                        <span class="showName"></span>
                     </blockquote>
                 </div>
 
                 <div class="item_3">
                     <blockquote class="blockquote1">
                         <p style="font-weight: bold; margin-top: 0em;">目標金額</p>
-                        <input type="text" id="targetMoney" class="inputbox2" required>元
+                        <span class="showMoney"></span>元
                     </blockquote>
                 </div>
                 <div class="item_3">
                     <blockquote class="blockquote1">
                         <p style="font-weight: bold; margin-top: 0em;">預計投資年限</p>
-                        <input type="text" id="targetTime" class="inputbox2" required>年
+                        <span class="showTime"></span>年
                     </blockquote>
                 </div>
             </div>
@@ -194,32 +194,40 @@
 
     <script>
 
-        document.getElementById("targetName").value = localStorage.getItem("Name");
-        document.getElementById("targetMoney").value = localStorage.getItem("Money");
-        document.getElementById("targetTime").value = localStorage.getItem("Time");
+        function showName() {
+            let nameDom = document.querySelector('.showName')
+            nameDom.innerHTML = localStorage.getItem('Name')
+        }
+        showName();
+
+        function showMoney() {
+            let nameDom = document.querySelector('.showMoney')
+            nameDom.innerHTML = localStorage.getItem('Money')
+        }
+        showMoney();
+
+        function showTime() {
+            let nameDom = document.querySelector('.showTime')
+            nameDom.innerHTML = localStorage.getItem('Time')
+        }
+        showTime();
+
+    </script>
+
+    <script>
+
         document.getElementById("targetiMoney").value = localStorage.getItem("iMoney");
         var call = document.querySelector('.btnCall');
-        var str = localStorage.getItem('Name');
-        var str2 = localStorage.getItem('Money');
-        var str3 = localStorage.getItem('Time');
-        var str4 = localStorage.getItem('iMoney');
 
         var btn = document.querySelector('#btn');
 
         function setInputItem(e) {
-            var str = document.querySelector("#targetName").value; //選擇到表單輸入的值
-            var str2 = document.querySelector("#targetMoney").value;
-            var str3 = document.querySelector("#targetTime").value;
             var str4 = document.querySelector("#targetiMoney").value;
             var str5 = document.querySelector("#targetPercent").value;
 
-            localStorage.setItem("Name", str); //存入 localStorage
-            localStorage.setItem("Money", str2);
-            localStorage.setItem("Time", str3);
             localStorage.setItem("iMoney", str4);
             localStorage.setItem("Percent", str5);
         }
-
 
     </script>
 
